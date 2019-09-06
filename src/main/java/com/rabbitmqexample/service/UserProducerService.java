@@ -12,9 +12,8 @@ public class UserProducerService<User> extends ProducerService<User>{
 
 	@Override
 	public void process(User user) {
-	template.convertAndSend(RabbitProperties.USER_EXCHANGE_NAME, RabbitProperties.USER_ROUTING_KEY, user);
-	System.out.println("The user "+user+" has been produced as a message");
-		
+		template.convertAndSend(RabbitProperties.USER_EXCHANGE_NAME, RabbitProperties.USER_ROUTING_KEY, user);
+		System.out.println("The user "+user+" has been produced as a message");	
 	}
 
 }

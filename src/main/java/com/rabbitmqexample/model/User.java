@@ -1,6 +1,7 @@
 package com.rabbitmqexample.model;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,10 +14,12 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @ToString
-public class User implements Serializable{
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class User {
 	
-	private static final long serialVersionUID = 1L;
+	@JsonProperty("name")
 	private String name;
+	@JsonProperty("age")
 	private Integer age;
 
 }
