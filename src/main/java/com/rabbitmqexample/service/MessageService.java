@@ -1,6 +1,6 @@
 package com.rabbitmqexample.service;
 
-public interface RabbitMQService<T> {
+public interface MessageService<T> {
 
 	void process(T object);
 }

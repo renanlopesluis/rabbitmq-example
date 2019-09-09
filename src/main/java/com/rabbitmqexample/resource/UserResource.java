@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.rabbitmqexample.builder.UserBuilder;
 import com.rabbitmqexample.model.User;
-import com.rabbitmqexample.service.RabbitMQService;
+import com.rabbitmqexample.service.MessageService;
 
 
 @RestController
@@ -18,7 +18,7 @@ public class UserResource {
 
 	@Autowired
 	@Qualifier("userProducerService")
-	private RabbitMQService<User> service;;
+	private MessageService<User> service;;
 	
 	@GetMapping("produce/{name}/{age}")
 	public String produce(@PathVariable("name") final String name, @PathVariable("age") final Integer age) {

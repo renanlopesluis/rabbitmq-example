@@ -9,7 +9,7 @@ import com.rabbitmqexample.config.RabbitProperties;
 import com.rabbitmqexample.model.User;
 
 @Service
-public class UserConsumerService implements RabbitMQService<User>{
+public class UserConsumerService implements MessageService<User>{
 
 	private final static Logger log = LoggerFactory.getLogger(UserConsumerService.class);
 	
