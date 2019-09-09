@@ -8,6 +8,11 @@ group = 'com'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+bootJar {
+    baseName = 'gs-accessing-data-mongodb'
+    version =  '0.1.0'
+}
+
 repositories {
 	mavenCentral()
 }
@@ -16,9 +21,15 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-amqp'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile("org.springframework.boot:spring-boot-starter-data-mongodb")
 	
 	compileOnly 'org.projectlombok:lombok:1.18.8'
 	annotationProcessor("org.projectlombok:lombok:1.18.8")
+}
+
+bootJar {
+    baseName = 'gs-accessing-data-mongodb'
+    version =  '0.1.0'
 }
 
 jar {
